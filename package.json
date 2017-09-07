@@ -1,0 +1,51 @@
+{
+  "name": "babel-plugin-async-import",
+  "version": "1.0.0-alpha",
+  "main": "dist",
+  "description": "Platform-agnostic asynchronous imports",
+  "homepage": "https://github.com/bernardmcmanus/babel-plugin-async-import",
+  "license": "BSD-3-Clause",
+  "author": {
+    "name": "Bernard McManus",
+    "email": "bernard.mcmanus.iv@gmail.com",
+    "url": "https://github.com/bernardmcmanus"
+  },
+  "keywords": [
+    "babel",
+    "plugin",
+    "import",
+    "async",
+    "dynamic",
+    "optimization",
+    "webpack"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bernardmcmanus/babel-plugin-async-import.git"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "build": "babel src --copy-files --out-dir dist --source-maps inline",
+    "clean": "rimraf dist",
+    "lint": "eslint . --ignore-path .gitignore",
+    "prepublishOnly": "npm run build",
+    "pretest": "npm run lint",
+    "test": "echo 'FIXME add tests'; exit 0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^7.2.3",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "eslint": "^4.6.1",
+    "eslint-plugin-import": "^2.7.0",
+    "rimraf": "^2.6.1"
+  },
+  "dependencies": {
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-template": "^6.26.0",
+    "babel-types": "^6.26.0"
+  }
+}
