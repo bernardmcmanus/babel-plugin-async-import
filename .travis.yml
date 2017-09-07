@@ -6,6 +6,8 @@ node_js:
 - 4
 - 6
 - stable
+before_install:
+  - npm i npm@latest -g
 deploy:
   provider: npm
   on:
