@@ -1,4 +1,3 @@
-<sub>Based on [airbnb/babel-plugin-dynamic-import-node](https://github.com/airbnb/babel-plugin-dynamic-import-node)</sub>
 # babel-plugin-async-import [![travis-ci](https://travis-ci.org/bernardmcmanus/babel-plugin-async-import.svg)](https://travis-ci.org/bernardmcmanus/babel-plugin-async-import)
 > Platform-agnostic asynchronous imports
 
