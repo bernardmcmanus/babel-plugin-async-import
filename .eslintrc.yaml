@@ -5,4 +5,5 @@ extends:
   - plugin:import/errors
   - plugin:import/warnings
 env:
+  es6: true
   node: true
