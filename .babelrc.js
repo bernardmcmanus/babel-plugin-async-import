@@ -2,9 +2,9 @@ module.exports = {
 	presets: [
 		['@babel/env', {
 			targets: {
-				node: 4
+				node: 6
 			},
-			useBuiltins: 'usage'
+			useBuiltIns: 'usage'
 		}]
 	],
 	plugins: [

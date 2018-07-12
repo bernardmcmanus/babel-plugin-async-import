@@ -4,7 +4,8 @@
 ## Overview
 * Generate code that can run on server and in browser
 * Full support for code splitting *and* SSR
-* Node 4+
+* Node 6+
+* See the [v1](https://github.com/bernardmcmanus/babel-plugin-async-import/tree/v1) branch for Babel 6 support
 
 ```js
 const getPageContainer = memoize(async name => await (
