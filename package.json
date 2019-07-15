@@ -1,7 +1,6 @@
 {
   "name": "babel-plugin-async-import",
-  "version": "2.0.2",
-  "main": "dist",
+  "version": "2.1.0",
   "description": "Platform-agnostic asynchronous imports",
   "homepage": "https://github.com/bernardmcmanus/babel-plugin-async-import",
   "license": "BSD-3-Clause",
@@ -24,29 +23,20 @@
     "url": "https://github.com/bernardmcmanus/babel-plugin-async-import.git"
   },
   "engines": {
-    "node": ">=4"
+    "node": ">=8",
+    "npm": ">=6"
   },
   "scripts": {
-    "build": "babel src --copy-files --out-dir dist --source-maps inline",
-    "clean": "rimraf dist",
     "lint": "eslint . --ignore-path .gitignore",
-    "prebuild": "npm run clean",
-    "prepublishOnly": "npm run build",
-    "pretest": "npm run lint",
-    "test": "echo 'FIXME add tests'; exit 0"
+    "pretest": "npm run lint"
   },
   "dependencies": {
-    "@babel/plugin-syntax-dynamic-import": "^7.0.0-beta.46",
-    "@babel/template": "^7.0.0-beta.46"
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/template": "^7.4.4"
   },
   "devDependencies": {
-    "@babel/cli": "^7.0.0-beta.46",
-    "@babel/core": "^7.0.0-beta.46",
-    "@babel/plugin-proposal-object-rest-spread": "^7.0.0-beta.46",
-    "@babel/preset-env": "^7.0.0-beta.46",
     "babel-eslint": "^8.2.3",
     "eslint": "^4.6.1",
-    "eslint-plugin-import": "^2.7.0",
-    "rimraf": "^2.6.1"
+    "eslint-plugin-import": "^2.7.0"
   }
 }
