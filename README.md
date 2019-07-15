@@ -1,21 +1,31 @@
 # babel-plugin-async-import [![travis-ci](https://travis-ci.org/bernardmcmanus/babel-plugin-async-import.svg)](https://travis-ci.org/bernardmcmanus/babel-plugin-async-import)
+
 > Platform-agnostic asynchronous imports
 
 ## Overview
-* Generate code that can run on server and in browser
-* Full support for code splitting *and* SSR
-* Node 6+
-* See the [v1](https://github.com/bernardmcmanus/babel-plugin-async-import/tree/v1) branch for Babel 6 support
 
-```js
-const getPageContainer = memoize(async name => await (
-  await import(`./pages/${name}`)
-).default);
+- Generate code that can run on server and in browser
+- Full support for code splitting *and* SSR
+- Node 8+
+- See the [v1](https://github.com/bernardmcmanus/babel-plugin-async-import/tree/v1) branch for Babel 6 support
+
+```jsx
+import React, { Suspense } from 'react';
+
+export default function LazyContainer({ name, ...props }) {
+  const LazyComponent = React.lazy(() => import(`./pages/${name}`));
+  return (
+    <Suspense fallback="Loading...">
+      <LazyComponent {...props} />
+    </Suspense>
+  );
+}
 ```
 
 ## Usage
 
-##### .babelrc.js
+##### babel.config.js
+
 ```js
 module.exports = {
   plugins: [
@@ -34,6 +44,7 @@ module.exports = {
 ```
 
 Use `BABEL_TARGET` to choose the output template:
+
 ```shell
 BABEL_TARGET=browser babel src --copy-files --out-dir dist
 
@@ -41,7 +52,9 @@ BABEL_TARGET=node babel src --copy-files --out-dir dist
 ```
 
 ## Performance
+
 Consider a simple application with the following structure:
+
 ```bash
 App
  ├── Page1
@@ -51,6 +64,7 @@ App
 ```
 
 Bundling with [webpack](https://github.com/webpack/webpack) yields:
+
 ```bash
 # static import
  main.dfdad3d5930fe00fd037.js       526 kB      0  [emitted]  [big]  main

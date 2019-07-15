@@ -1,14 +1,13 @@
-import Template from '@babel/template';
-import syntax from '@babel/plugin-syntax-dynamic-import';
+const { default: Template } = require('@babel/template');
+const { default: syntax } = require('@babel/plugin-syntax-dynamic-import');
 
-export default (_, options) => {
-	const opts = {
+module.exports = (_, options) => {
+	const opts = Object.assign({
 		template: undefined,
 		browser: 'import(REQUEST)',
 		node: 'Promise.resolve(require(REQUEST))',
-		syntax: ['asyncGenerators', 'dynamicImport', 'objectRestSpread'],
-		...options
-	};
+		syntax: ['asyncGenerators', 'dynamicImport', 'objectRestSpread']
+	}, options);
 
 	const history = new WeakSet();
 	const template = Template(
